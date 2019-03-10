@@ -50,6 +50,8 @@ public:
         success = false;
         return ;
       }
+    
+      // dist_x and dist_y are square of the distances in respective directions
 
       float dist_x = (goal->KF_center_x - goal->frame_center_x) * (goal->KF_center_x - goal->frame_center_x) ;
       float dist_y = (goal->KF_center_y - goal->frame_center_y) * (goal->KF_center_y - goal->frame_center_y) ;
@@ -57,8 +59,8 @@ public:
       // If Kalman Filter is not detected
 
       if (goal->KF_center_x == 0 && goal->KF_center_y == 0) {
-          feedback_.motion_sequence.push_back("Nothing Detected , Default Search Motion");
-          result_.motion = "Nothing Detected ,  Default Search Motion" ;
+          feedback_.motion_sequence.push_back("Nothing Detected , Default Search Motion , Move Backwards");
+          result_.motion = "Nothing Detected ,  Default Search Motion , Move Backwards" ;
       }
 
       // K filter center is close to the frame center
