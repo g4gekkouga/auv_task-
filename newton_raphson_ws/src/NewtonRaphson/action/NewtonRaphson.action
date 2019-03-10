@@ -5,4 +5,4 @@ float64 initial_guess
 float64 estimated_root
 ---
 #feedback
-float64 current_estimation
+float64[] estimation_sequence

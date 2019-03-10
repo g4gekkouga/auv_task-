@@ -2,6 +2,9 @@
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
 #include <NewtonRaphson/NewtonRaphsonAction.h>
+#include <iostream>
+
+#define INITIAL_GUESS 50
 
 int main (int argc, char **argv)
 {
@@ -18,7 +21,7 @@ int main (int argc, char **argv)
   ROS_INFO("Action server started, sending goal.");
   // send a goal to the action
   NewtonRaphson::NewtonRaphsonGoal goal;
-  goal.initial_guess = -20;
+  goal.initial_guess = INITIAL_GUESS;
   ac.sendGoal(goal);
 
   //wait for the action to return
