@@ -69,6 +69,7 @@ find_package(Boost REQUIRED COMPONENTS system)
  add_action_files(
    DIRECTORY action
    FILES NewtonRaphson.action
+   FILES NewtonRaphson2.action
  )
 
 ## Generate added messages and services with any dependencies listed here
@@ -136,6 +137,31 @@ add_dependencies(
   ${NewtonRaphson_EXPORTED_TARGETS}
 )
 
+
+
+
+
+
+add_executable(NewtonRaphson_server2 src/NewtonRaphson_server2.cpp)
+
+target_link_libraries(
+  NewtonRaphson_server2
+  ${catkin_LIBRARIES}
+)
+
+add_dependencies(
+  NewtonRaphson_server2
+  ${NewtonRaphson_EXPORTED_TARGETS}
+)
+
+
+
+
+
+
+
+
+
 add_executable(NewtonRaphson_client src/NewtonRaphson_client.cpp)
 
 target_link_libraries( 
@@ -150,6 +176,17 @@ add_dependencies(
 
 
 
+add_executable(NewtonRaphson_client2 src/NewtonRaphson_client2.cpp)
+
+target_link_libraries( 
+  NewtonRaphson_client2
+  ${catkin_LIBRARIES}
+)
+
+add_dependencies(
+  NewtonRaphson_client2
+  ${NewtonRaphson_EXPORTED_TARGETS}
+)
 
 
 
